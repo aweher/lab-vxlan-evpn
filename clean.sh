@@ -5,6 +5,7 @@ echo "Ctrl+C to cancel..."
 
 read key
 
+source ./.venv-local/bin/activate && python main.py > topology.yml
 sudo containerlab destroy --topo topology.yml --cleanup
 sudo rm -rf ./.venv-local
 sudo rm -rf ./topology.yml

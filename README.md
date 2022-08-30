@@ -12,7 +12,7 @@ This is based in a clean install of an Ubuntu Linux 22.04 LTS server.
 
 ```bash
 sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg lsb-release jq
+sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg lsb-release jq python3-venv
 
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -40,7 +40,7 @@ sudo cat <<'EOF'> /etc/docker/daemon.json
 }
 EOF
 
-sudo systemctl reload docker
+sudo systemctl restart docker
 ```
 
 ### Install Docker Compose
