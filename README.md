@@ -27,6 +27,20 @@ sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 ```
 
+### Configurar Docker
+
+```bash
+sudo cat <<'EOF'> /etc/docker/daemon.json
+{
+    "bip": "198.18.64.1/24",
+    "ipv6": true,
+    "fixed-cidr-v6": "2001:db8:dada::/64"
+}
+EOF
+
+sudo systemctl reload docker
+```
+
 ### Instalar Docker Compose
 
 ```bash
@@ -44,11 +58,30 @@ sudo tee -a /etc/apt/sources.list.d/netdevops.list
 apt update && apt install -y containerlab
 ```
 
-### Clonar el repositorio y ejecutar
+### Clonar el repositorio
 
 ```bash
+# Clonar
 git clone https://github.com/aweher/lab-vxlan-evpn.git
-bash run.sh
+
+# Adquirir un token de mysocketio.dev en caso de querer publicar puertos
+sudo containerlab tools mysocketio login -e email@dominio.com
+
+# Ejecutar
+bash ./run.sh
+```
+
+### Conectar con una instancia
+
+```bash
+# Ejemplo: lacnog2022-vxlan-evpn-spine2
+docker exec -ti lacnog2022-vxlan-evpn-spine2 /bin/ash
+```
+
+### Detener el lab y eliminar archivos
+
+```bash
+bash clean.sh
 ```
 
 ## Autores
