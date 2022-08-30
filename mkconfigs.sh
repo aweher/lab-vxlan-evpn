@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source .venv-linux/bin/activate || exit 1
+source .venv-local/bin/activate || exit 1
 
 if [ -d working-configs ]; then
   echo "working-configs directory already exists. Stopping"
