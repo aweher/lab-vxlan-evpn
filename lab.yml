@@ -1,0 +1,10 @@
+---
+LACNOG_LAB:
+  labname: 'vxlan-evpn'
+  labauthor: 'Ariel S. Weher <ariel@weher.net>'
+  labprefix: 'lacnog2022'
+  spines: 2
+  leafs: 50
+  hosts: 50
+  image_name_frrouting: 'frrouting/frr:v8.3.0'
+  image_name_host: 'wbitt/network-multitool:alpine-extra'
