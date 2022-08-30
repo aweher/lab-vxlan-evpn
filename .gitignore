@@ -164,5 +164,6 @@ cython_debug/
 .venv-linux/
 .venv-local/
 clab-lacnog2022-vxlan-evpn/
+working-configs/
 lab/
 .mysocketio_token

@@ -23,7 +23,7 @@ topology:
       kind: linux
       image: {{ image_name_frrouting }}
       binds:
-        - general-configs/daemons:/etc/frr/daemons
+         - working-configs/spine{{ spine }}:/etc/frr:rw
 {%- endfor %}
 
 {%- for leaf in range(1, leafs + 1) %}
@@ -33,7 +33,7 @@ topology:
 #      publish:
 #        - tcp/22
       binds:
-        - general-configs/daemons:/etc/frr/daemons
+        - working-configs/leaf{{ leaf }}:/etc/frr:rw
     host{{ leaf }}:
       kind: linux
       image: {{ image_name_host }}
