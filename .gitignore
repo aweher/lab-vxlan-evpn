@@ -167,3 +167,5 @@ clab-lacnog2022-vxlan-evpn/
 working-configs/
 lab/
 .mysocketio_token
+
+.vagrant
