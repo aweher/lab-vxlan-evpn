@@ -56,7 +56,7 @@ class LabMenu(object):
                 print(Fore.GREEN + f"Connecting to LEAF{self.mi_asiento}")
                 print(Style.RESET_ALL)
                 
-                p = subprocess.run(f"docker exec -ti {self.name_prefixes['leaf']}{self.mi_asiento} vtysh", shell=True, text=True, stderr=subprocess.PIPE)
+                p = subprocess.run(f"docker exec -ti {self.name_prefixes['leaf']}{self.mi_asiento} ash", shell=True, text=True, stderr=subprocess.PIPE)
                 if p.returncode is not 0:
                     print(Fore.RED + f"Something failed...:(\n{p.stderr}")
                     print(Style.RESET_ALL)
@@ -67,7 +67,7 @@ class LabMenu(object):
                 print(Fore.GREEN + f"Connecting to HOST{self.mi_asiento}")
                 print(Style.RESET_ALL)
 
-                p = subprocess.run(f"docker exec -ti {self.name_prefixes['leaf']}{self.mi_asiento} /bin/ash", shell=True, text=True, stderr=subprocess.PIPE)
+                p = subprocess.run(f"docker exec -ti {self.name_prefixes['leaf']}{self.mi_asiento} ash", shell=True, text=True, stderr=subprocess.PIPE)
                 if p.returncode is not 0:
                     print(Fore.RED + f"Something Failed...:(\n{p.stderr}")
                     print(Style.RESET_ALL)

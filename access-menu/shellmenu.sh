@@ -1,6 +1,6 @@
 #!/bin/bash
-trap 'Never gonna let you out' SIGINT
-trap 'Never gonna let you down' SIGTSTP
+trap '' SIGINT
+trap '' SIGTSTP
 
 cd /opt/lacnog-labs/vxlan-evpn
 
