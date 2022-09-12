@@ -93,3 +93,4 @@ bash clean.sh
 
 * Ariel S. Weher <ariel[at]weher.net>
 * Nicolás Antoniello <nantoniello[at]nog.lat>
+* Carlos Martinez - Cagnazzo <cmartinez[at]nog.lat>
