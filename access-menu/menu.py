@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import os
 from clint.textui import colored
 from colorama import Fore, Back, Style
@@ -56,19 +57,21 @@ class LabMenu(object):
                 print(Style.RESET_ALL)
                 
                 p = subprocess.run(f"docker exec -ti {self.name_prefixes['leaf']}{self.mi_asiento} vtysh", shell=True, text=True, stderr=subprocess.PIPE)
-                if p.returncode != 0:
+                if p.returncode is not 0:
                     print(Fore.RED + f"Something failed...:(\n{p.stderr}")
                     print(Style.RESET_ALL)
+                    os.system("pause")
 
             elif device == '2':
                 # Connect to host
                 print(Fore.GREEN + f"Connecting to HOST{self.mi_asiento}")
                 print(Style.RESET_ALL)
 
-                p = subprocess.run(f"docker exec -ti {self.name_prefixes['leaf']}{self.mi_asiento} vtysh", shell=True, text=True, stderr=subprocess.PIPE)
-                if p.returncode != 0:
+                p = subprocess.run(f"docker exec -ti {self.name_prefixes['leaf']}{self.mi_asiento} /bin/ash", shell=True, text=True, stderr=subprocess.PIPE)
+                if p.returncode is not 0:
                     print(Fore.RED + f"Something Failed...:(\n{p.stderr}")
                     print(Style.RESET_ALL)
+                    os.system("pause")
             
             elif device == "q":
                 self.good_bye()
