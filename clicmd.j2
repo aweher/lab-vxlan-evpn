@@ -1,8 +1,0 @@
-#!/bin/sh
-
-{%- for container in containers %}
-    {%- for interface in interfaces %}
-sudo docker exec -d {{ container }} ip link set {{ interface }} up
-    {%-endfor %}
-    
-{%-endfor %}
