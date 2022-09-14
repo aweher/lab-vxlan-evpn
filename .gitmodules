@@ -1,3 +1,6 @@
 [submodule "docs"]
 	path = docs
 	url = https://github.com/LACNOG/doc-labs-vxlanevpn.git
+[submodule "infra"]
+	path = infra
+	url = https://github.com/aweher/lab-lacnog-vxlan-evpn-backend.git
