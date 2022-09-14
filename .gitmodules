@@ -4,6 +4,3 @@
 [submodule "infra"]
 	path = infra
 	url = https://github.com/aweher/lab-lacnog-vxlan-evpn-backend.git
-[submodule "access-menu"]
-	path = access-menu
-	url = https://github.com/aweher/lab-lacnog-menu.git
