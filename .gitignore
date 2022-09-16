@@ -168,3 +168,7 @@ working-configs/
 lab/
 .mysocketio_token
 .vagrant
+topology.yml
+.topology.yml.bak
+ansible-inventory.yml
+topology-data.json

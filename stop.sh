@@ -4,3 +4,5 @@ python3 main.py > topology.yml
 if [ -f topology.yml ]; then
   sudo containerlab destroy --topo topology.yml
 fi
+
+sudo ip link del dev bridge-domain

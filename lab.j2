@@ -18,6 +18,9 @@ topology:
 #      binds:
 #        - .mysocketio_token:/root/.mysocketio_token
 
+    bridge-domain:
+      kind: bridge
+
 {%- for spine in range(1, spines + 1) %}
     spine{{ spine }}:
       kind: linux
@@ -47,6 +50,7 @@ topology:
     {%- for value_a in range(1, spines + 1)  %}
     - endpoints: ["spine{{ value_a }}:eth{{ leaf }}", "leaf{{ leaf }}:eth{{ value_a }}"]
     {%- endfor %}
+    - endpoints: ["leaf{{ leaf }}:eth4", "bridge-domain:eth{{ leaf + 10}}"]
 {%- endfor %}
 #
 {%- for leaf in range(1, leafs + 1)  %}
