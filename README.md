@@ -4,6 +4,10 @@ Virtual Lab to be used during the [LACNOG2022](https://nog.lat) event.
 
 Important note: This repository is under constant development until the tutorial day. Please be aware of the changes after every clone/pull.
 
+## Components
+
+![Components](docs/docs/assets/scheme.svg)
+
 ## Installation
 
 This is based in a clean install of an Ubuntu Linux 22.04 LTS server.
