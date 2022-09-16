@@ -16,6 +16,6 @@ sudo ip link set bridge-domain up
 python3 -m venv .venv-local && source .venv-local/bin/activate && pip install -r requirements.txt
 python3 main.py > topology.yml
 if [ -f topology.yml ]; then
-  ./mkconfigs.sh
+  bash mkconfigs.sh
   sudo containerlab deploy --topo topology.yml
 fi
