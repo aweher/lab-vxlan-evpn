@@ -23,8 +23,10 @@ fi
 # Disable default routes over mgmt network
 for CONTAINER in $(docker ps --format '{{.Names}}' | grep "lacnog2022-vxlan-evpn-"); 
   do
-    docker exec -ti $CONTAINER sysctl -w net.ipv6.conf.all.autoconf=0;
-    docker exec -ti $CONTAINER sysctl -w net.ipv6.conf.all.accept_ra=0
+    docker exec -ti $CONTAINER sysctl -q -w net.ipv6.conf.all.autoconf=0;
+    docker exec -ti $CONTAINER sysctl -q -w net.ipv6.conf.all.accept_ra=0
     docker exec -ti $CONTAINER ip route del default;
     docker exec -ti $CONTAINER ip -6 route del default;
   done
+
+  echo "Enjoy!"
