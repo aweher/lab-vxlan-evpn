@@ -13,3 +13,5 @@ sudo rm -rf ./*.bak
 sudo rm -rf ./.*.bak
 sudo rm -rf ./clab-vxlan-evpn
 sudo rm -rf ./working-configs
+
+sudo ip link del dev bridge-domain
