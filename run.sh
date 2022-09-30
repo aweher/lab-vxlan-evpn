@@ -19,3 +19,7 @@ if [ -f topology.yml ]; then
   bash mkconfigs.sh
   sudo containerlab deploy --topo topology.yml
 fi
+
+# Disable default routes over mgmt network
+for CONTAINER in $(docker ps --format '{{.Names}}' | grep "lacnog2022-vxlan-evpn-"); do docker exec -ti $CONTAINER ip route del default; done
+for CONTAINER in $(docker ps --format '{{.Names}}' | grep "lacnog2022-vxlan-evpn-"); do docker exec -ti $CONTAINER ip -6 route del default; done

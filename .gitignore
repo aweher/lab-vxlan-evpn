@@ -162,6 +162,7 @@ cython_debug/
 # Ariel S. Weher
 .vscode/
 .venv-linux/
+.venv-macos/
 .venv-local/
 clab-lacnog2022-vxlan-evpn/
 working-configs/
